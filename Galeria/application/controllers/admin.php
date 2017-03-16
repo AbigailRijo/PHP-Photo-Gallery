@@ -24,10 +24,17 @@ class Admin extends CI_Controller
     # code...
     $this->load->view('admin/inicio');
   }
+
   function login()
   {
     # code...
     $this->load->view('admin/login');
+  }
+
+  function salir()
+  {
+    unset($_SESSION['gale_user']);
+    redirect('admin/login');
   }
 }
 

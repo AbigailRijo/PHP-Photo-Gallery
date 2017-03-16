@@ -6,13 +6,31 @@ plantilla::inicio();
 <!-- Page Heading -->
 <div class="row">
 <div class="col-lg-12">
-    <h1 class="page-header">Page Heading
-        <small>Secondary Text</small>
+    <h1 class="page-header">Mis imagenes
+        <small>Contempla lo bello de la naturaleza</small>
     </h1>
 </div>
 </div>
 <!-- /.row -->
+<div class="row">
+  <?php
+     $imagenes = cargar_imagenes();
 
+     $url = base_url('');
+
+      foreach ($imagenes as $imagen) {
+        # code...
+        echo <<<FOTO
+        <div class="col-md-3 portfolio-item">
+            <a href="{$url}/web/ver_foto/{$imagen->id}">
+                <img class="img-responsive" src="{$url}/fotos/{$imagen->id}.jpg" alt="">
+            </a>
+        </div>
+FOTO;
+      }
+
+   ?>
+</div>
 <!-- Projects Row -->
 <div class="row">
 <div class="col-md-3 portfolio-item">

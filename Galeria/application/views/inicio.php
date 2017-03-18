@@ -20,10 +20,17 @@ plantilla::inicio();
 
       foreach ($imagenes as $imagen) {
         # code...
+        $foto = "fotos/{$imagen->id}.jpg";
+
+        if(!is_file($foto)){
+          $foto = "http://placehold.it/750x450/?text=no_foto";
+        }else{
+          $foto = "{$url}/{$foto}";
+        }
         echo <<<FOTO
         <div class="col-md-3 portfolio-item">
             <a href="{$url}/web/ver_foto/{$imagen->id}">
-                <img class="img-responsive" src="{$url}/fotos/{$imagen->id}.jpg" alt="">
+                <img class="img-responsive" src="{$foto}" alt="">
             </a>
         </div>
 FOTO;
@@ -31,80 +38,6 @@ FOTO;
 
    ?>
 </div>
-<!-- Projects Row -->
-<div class="row">
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-</div>
-<!-- /.row -->
-
-<!-- Projects Row -->
-<div class="row">
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-</div>
-<!-- /.row -->
-
-<!-- Projects Row -->
-<div class="row">
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-<div class="col-md-3 portfolio-item">
-    <a href="#">
-        <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-    </a>
-</div>
-</div>
-<!-- /.row -->
 
 <hr>
 

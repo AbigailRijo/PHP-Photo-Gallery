@@ -24,6 +24,17 @@ class Web extends CI_Controller
     # code...
     $this->load->view('about');
   }
+
+  function ver_foto($cod=0){
+    if ($cod == 0) {
+      # code...
+      redirect('web');
+    }
+    $d= array();
+    $d['cod'] = $cod;
+    $this->load->view('ver_foto', $d);
+
+  }
 }
 
 

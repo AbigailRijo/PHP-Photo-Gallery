@@ -116,7 +116,7 @@ class plantilla
 }
 
 function cargar_imagenes(){
-  $CI = get_instance();
+  $CI =& get_instance();
   $sql = "select * from imagenes";
   $rs = $CI->db->query($sql);
   return $rs->result();
